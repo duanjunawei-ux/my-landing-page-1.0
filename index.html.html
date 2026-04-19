@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>CommuteMind – Know Before You Go</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+            background: #f8fafc;
+            color: #0f172a;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* 首屏 */
+        .hero {
+            text-align: center;
+            padding: 3rem 0 2rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #e2e8f0;
+            color: #1e293b;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 30px;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #0f172a, #3b82f6);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .subhead {
+            font-size: 1.25rem;
+            color: #334155;
+            max-width: 650px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            font-weight: 600;
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin: 1rem 0;
+        }
+
+        .cta-button:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+        }
+
+        /* 手机示意图（模拟预览） */
+        .mockup {
+            background: #ffffff;
+            border-radius: 48px;
+            box-shadow: 0 25px 40px -12px rgba(0,0,0,0.25);
+            padding: 1rem;
+            max-width: 320px;
+            margin: 2rem auto;
+            border: 1px solid #e2e8f0;
+        }
+
+        .mockup-screen {
+            background: #0f172a;
+            border-radius: 36px;
+            padding: 1.2rem;
+            color: white;
+        }
+
+        .map-demo {
+            background: #1e293b;
+            border-radius: 20px;
+            padding: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .bus-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #334155;
+        }
+
+        .crowd {
+            font-weight: bold;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+        }
+
+        .green { background: #10b981; color: #000; }
+        .yellow { background: #f59e0b; color: #000; }
+        .red { background: #ef4444; color: #fff; }
+
+        /* 三大优势 */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin: 3rem 0;
+        }
+
+        .feature {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            border: 1px solid #e2e8f0;
+        }
+
+        .feature-icon {
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .feature h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature p {
+            color: #475569;
+            font-size: 0.9rem;
+        }
+
+        /* 社会证明 */
+        .testimonial {
+            background: white;
+            border-left: 5px solid #3b82f6;
+            padding: 1.5rem;
+            border-radius: 24px;
+            margin: 2rem 0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .testimonial p {
+            font-style: italic;
+            color: #1e293b;
+        }
+
+        .testimonial span {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+
+        @media (max-width: 640px) {
+            h1 { font-size: 2rem; }
+            .subhead { font-size: 1rem; }
+            .container { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <div class="badge">🚇 Built for daily commuters</div>
+        <h1>Stop guessing your bus.<br>Save 5 minutes every ride.</h1>
+        <div class="subhead">
+            Real‑time crowding + AI routes that respect your preferences — <strong>fastest, fewest transfers, or least crowded.</strong>
+            Google Maps tells you *when* the bus comes. We tell you *if you’ll get on*.
+        </div>
+        <a href="#" class="cta-button">Join the waitlist →</a>
+        <div class="mockup">
+            <div class="mockup-screen">
+                <div style="font-size:0.8rem; margin-bottom:8px;">📍 Your route · Line 64</div>
+                <div class="bus-row">
+                    <span>🚌 5 min</span>
+                    <span class="crowd yellow">Crowded 🟡</span>
+                </div>
+                <div class="bus-row">
+                    <span>🚌 12 min</span>
+                    <span class="crowd green">Empty 🟢</span>
+                </div>
+                <div class="map-demo">
+                    🗺️ Live crowding map<br>
+                    <span style="font-size:0.7rem;">🟢🟡🔴 real‑time reports from other riders</span>
+                </div>
+                <div style="margin-top: 12px; font-size:0.7rem;">⭐ Choose your vibe:</div>
+                <div style="display:flex; gap:8px; margin-top: 6px;">
+                    <span style="background:#3b82f6; padding:4px 10px; border-radius:20px;">Fastest</span>
+                    <span style="background:#334155; padding:4px 10px; border-radius:20px;">Fewest transfers</span>
+                    <span style="background:#334155; padding:4px 10px; border-radius:20px;">Least crowded</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature">
+            <div class="feature-icon">⏱️</div>
+            <h3>Predictable arrival</h3>
+            <p>LSTM-based ETAs updated every 30s — even in tunnels.</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">📊</div>
+            <h3>Live crowding</h3>
+            <p>Crowd‑sourced + AI prediction. Red / yellow / green at a glance.</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">🧠</div>
+            <h3>Routes your way</h3>
+            <p>Choose “fewest transfers” or “least crowded” — not just fastest.</p>
+        </div>
+    </div>
+
+    <div class="testimonial">
+        <p>“I used to be late twice a week. Now I save 10 minutes every morning and never squeeze into a packed bus.”</p>
+        <span>— Chiara, daily metro user (beta tester)</span>
+    </div>
+
+    <div class="footer">
+        🚀 Coming to iOS & Android · Free tier · Unlimited AI plans from €4.99/month
+    </div>
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
