@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>MoveEasy – The Certain, Comfortable Commuting App</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+      color: #0f172a;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    /* 头部 / 导航 */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #0f172a, #3b82f6);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      font-weight: 500;
+      color: #334155;
+    }
+
+    .nav-links span {
+      cursor: default;
+    }
+
+    /* 主内容 */
+    .hero {
+      text-align: center;
+      padding: 1rem 0 2rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #e2e8f0;
+      color: #1e293b;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.3rem 0.9rem;
+      border-radius: 40px;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #0f172a, #3b82f6);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 1rem;
+    }
+
+    .tagline {
+      font-size: 1.25rem;
+      color: #334155;
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #3b82f6;
+      color: white;
+      font-weight: 700;
+      padding: 0.9rem 2.2rem;
+      border-radius: 60px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: 0.2s;
+      box-shadow: 0 8px 20px rgba(59,130,246,0.3);
+      margin: 1rem 0;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta-button:hover {
+      background: #2563eb;
+      transform: translateY(-2px);
+    }
+
+    /* 三个核心卖点卡片 */
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin: 3rem 0;
+    }
+
+    .feature-card {
+      flex: 1;
+      min-width: 260px;
+      background: white;
+      border-radius: 32px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+      border: 1px solid #e2e8f0;
+      transition: 0.2s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-card p {
+      color: #475569;
+      font-size: 0.95rem;
+    }
+
+    /* 手机模拟占位 + 评价区域 */
+    .showcase {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      margin: 4rem 0;
+      background: white;
+      border-radius: 48px;
+      padding: 2rem;
+      box-shadow: 0 20px 35px rgba(0,0,0,0.05);
+    }
+
+    .phone-mock {
+      background: #0f172a;
+      border-radius: 42px;
+      padding: 0.8rem;
+      width: 280px;
+      box-shadow: 0 25px 40px rgba(0,0,0,0.2);
+    }
+
+    .phone-screen {
+      background: #f1f5f9;
+      border-radius: 34px;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .phone-screen .app-preview {
+      font-size: 0.8rem;
+      color: #0f172a;
+    }
+
+    .map-placeholder {
+      background: #e2e8f0;
+      border-radius: 24px;
+      padding: 1rem;
+      margin: 0.8rem 0;
+      font-size: 0.8rem;
+    }
+
+    .testimonial {
+      flex: 1;
+      text-align: left;
+    }
+
+    .testimonial p {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: #1e293b;
+      line-height: 1.4;
+    }
+
+    .testimonial span {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 600;
+      color: #3b82f6;
+    }
+
+    .best-badge {
+      text-align: center;
+      margin: 2rem 0 1rem;
+    }
+
+    .best-badge span {
+      background: #fef9c3;
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid #cbd5e1;
+      color: #64748b;
+    }
+
+    @media (max-width: 700px) {
+      h1 { font-size: 2.2rem; }
+      .navbar { flex-direction: column; }
+      .showcase { flex-direction: column; text-align: center; }
+      .testimonial { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <!-- 简易导航 -->
+  <div class="navbar">
+    <div class="logo">MoveEasy</div>
+    <div class="nav-links">
+      <span>Features</span>
+      <span>How it works</span>
+      <span>Reviews</span>
+    </div>
+  </div>
+
+  <!-- 主视觉 -->
+  <div class="hero">
+    <div class="badge">✨ Your Final Commuting Solution</div>
+    <h1>The Most Certain,<br>Comfortable & Scientific Commuting App</h1>
+    <div class="tagline">
+      No more uncertainty. Real-time ETAs, live crowding, and smart routing that respects your preferences.
+    </div>
+    <a href="#" class="cta-button">📲 Download Now!</a>
+  </div>
+
+  <!-- 三个核心优势 -->
+  <div class="features">
+    <div class="feature-card">
+      <div class="feature-icon">⏱️📍</div>
+      <h3>Certain Predictable Arrival</h3>
+      <p>LSTM-based ETAs + GPS IoT — no more uncertain waiting. Know exactly when your bus arrives, even in tunnels.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📢😌</div>
+      <h3>Real Comfortable Reporting</h3>
+      <p>AI-predict crowding + real people reporting. Know everything in advance — avoid packed buses.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🧠🔄</div>
+      <h3>Smarter Routing</h3>
+      <p>Mixed Model Smart Routing respecting your tastes — fastest, fewest transfers, or least crowded — even during strikes.</p>
+    </div>
+  </div>
+
+  <!-- 手机模拟 + 评价 -->
+  <div class="showcase">
+    <div class="phone-mock">
+      <div class="phone-screen">
+        <div class="app-preview">🚌 MoveEasy</div>
+        <div class="map-placeholder">
+          🗺️ Live crowding map<br>
+          <span style="display:flex; justify-content:center; gap:6px; margin-top:6px;">🟢🟡🔴 real-time</span>
+        </div>
+        <div style="font-size:0.7rem; margin-top:6px;">⭐ Choose your vibe: Fastest · Fewest transfers · Least crowded</div>
+        <div style="font-size:0.65rem; margin-top:8px;">*Real APP Image</div>
+      </div>
+    </div>
+    <div class="testimonial">
+      <p>“I used to be late twice a week. Now I save 10 minutes every morning and never squeeze into a packed bus.”</p>
+      <span>— Chiara, daily metro user (beta tester)</span>
+    </div>
+  </div>
+
+  <div class="best-badge">
+    <span>🏆 Best Commuting App Ever — Now Available</span>
+  </div>
+
+  <div class="footer">
+    <p>© 2025 MoveEasy · Your Final Commuting Solution · Coming to iOS & Android</p>
+  </div>
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
